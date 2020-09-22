@@ -1,13 +1,15 @@
 import React from 'react';
 
 const Home = ({ categories }) => {
-
+  console.log(categories)
   return (
     <div className="option-boxes">
       <form>
         <input list="categories" />
         <datalist id="categories">
-          <option value="youuuuu" />
+          {/* {categories.forEach((category) => {
+            return <option value="category" />
+          })} */}
         </datalist>
       </form>
       <form>

@@ -1,14 +1,20 @@
 import React from 'react';
 import './App.css';
 
-import Home from './components/Home';
+import Renderer from './components/Renderer';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      preMount: true,
+      categories: {},
     }
+    this.mounter = this.mounter.bind(this);
+  }
+
+  mounter() {
+    this.setState({ preMount: false });
   }
 
   componentDidMount() {
@@ -17,17 +23,25 @@ class App extends React.Component {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
+      this.setState({ categories: data });
+      setTimeout(this.mounter, 2000 );
     })
+    .catch((err) => {
+      alert(err);
+    });
   }
 
+
   render() {
+    const { preMount, categories} = this.state;
     return (
       <div className="container">
         <div className="title-box">
-          <p>Trivster</p>
+          <p className="tite">Trivster</p>
         </div>
-        <Home />
+        <div className="body-box">
+          <Renderer preMount={preMount} categories={categories} />
+        </div>
       </div>
     );
   }

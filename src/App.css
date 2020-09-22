@@ -1,0 +1,27 @@
+.title-box {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.562);
+}
+
+@keyframes squishy-spin {
+  0% {transform: rotate(0deg)}
+  25% {transform: rotate(90deg)}
+  50% {transform: rotate(180deg)}
+  75% {transform: rotate(270deg)}
+  100% {transform: rotate(360deg)}
+}
+
+.squishy {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+  top: 200px;
+  animation-name: squishy-spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+
+}
