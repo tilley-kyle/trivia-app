@@ -23,5 +23,38 @@
   animation-name: squishy-spin;
   animation-duration: 2s;
   animation-timing-function: linear;
+}
 
+input {
+  width: 200px;
+  margin: 10px;
+  display: inline-block;
+}
+
+form {
+  display: inline-block
+}
+
+.body-box {
+  display: block;
+  margin: auto;
+  width: 700px;
+}
+
+.trivia-bttn {
+  width: 100px;
+  margin: auto;
+  display: inline-block;
+}
+
+button {
+  width: 100px;
+  margin: auto;
+  display: inline-block;
+}
+
+.btn-cont {
+  width: 100px;
+  margin: auto;
+  display: inline-block;
 }
