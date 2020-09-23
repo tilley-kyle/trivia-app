@@ -1,4 +1,5 @@
 const APIUrlGenerator = (categories, triviaCriteria) => {
+  console.log(categories.trivia_categories)
   let baseURL = 'https://opentdb.com/api.php?';
   const keyCriterias = Object.keys(triviaCriteria);
   if (!keyCriterias.length) {
