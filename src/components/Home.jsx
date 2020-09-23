@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Home = ({ categories, onInputChange }) => {
-  console.log(categories)
+const Home = ({ categories, onInputChange, onTriviaButtonClick }) => {
   return (
     <div>
       <div className="option-boxes">
@@ -27,7 +26,7 @@ const Home = ({ categories, onInputChange }) => {
         </form>
       </div>
       <div className="btn-cont">
-        <button className="trivia-bttn">TRIVIA!!</button>
+        <button className="trivia-bttn" onClick={(e) => onTriviaButtonClick(e)} >TRIVIA!!</button>
       </div>
     </div>
   )
