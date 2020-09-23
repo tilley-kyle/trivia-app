@@ -50,6 +50,7 @@ class App extends React.Component {
     const { categories, triviaCriteria } = this.state;
     e.preventDefault();
     const url = APIUrlGenerator(categories, triviaCriteria);
+    console.log(url)
   }
 
 
