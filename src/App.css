@@ -49,12 +49,16 @@ form {
 
 button {
   width: 100px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: inline-block;
+  text-align: center;
 }
 
 .btn-cont {
   width: 100px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: inline-block;
+  text-align: center;
 }

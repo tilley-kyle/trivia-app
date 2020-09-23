@@ -9,8 +9,10 @@ class App extends React.Component {
     this.state = {
       preMount: true,
       categories: {},
+      triviaCriteria: {},
     }
     this.mounter = this.mounter.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
   }
 
   mounter() {
@@ -31,6 +33,13 @@ class App extends React.Component {
     });
   }
 
+  onInputChange(e) {
+    const { triviaCriteria } = this.state;
+    e.preventDefault();
+    triviaCriteria[e.target.id] = e.target.value;
+    this.setState(triviaCriteria);
+  }
+
 
   render() {
     const { preMount, categories} = this.state;
@@ -40,7 +49,7 @@ class App extends React.Component {
           <p className="tite">Trivster</p>
         </div>
         <div className="body-box">
-          <Renderer preMount={preMount} categories={categories} />
+          <Renderer preMount={preMount} categories={categories} onInputChange={this.onInputChange} />
         </div>
       </div>
     );
