@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Home = ({ categories, onInputChange }) => {
+  console.log(categories)
   return (
     <div>
       <div className="option-boxes">
         <form>
-          <input list="categories" placeholder="Select Category" id="Categories" onChange={(e) => onInputChange(e)} />
+          <input list="categories" placeholder="Select Category" id="category" onChange={(e) => onInputChange(e)} />
           <datalist id="categories">
             {categories.trivia_categories.map((category) => {
               return <option value={category.name} key={category.id} />
@@ -13,15 +14,15 @@ const Home = ({ categories, onInputChange }) => {
           </datalist>
         </form>
         <form>
-          <input type="number" placeholder="Number of Questions" min="1" max="50" id="Number" onChange={(e) => onInputChange(e)} />
+          <input type="number" placeholder="Number of Questions" min="1" max="50" id="amount" onChange={(e) => onInputChange(e)} />
         </form>
         <form>
-          <input list="difficulty" placeholder="Difficulty" id="Difficulty" onChange={(e) => onInputChange(e)} />
-          <datalist id="difficulty">
+          <input list="difficulties" placeholder="Difficulty" id="difficulty" onChange={(e) => onInputChange(e)} />
+          <datalist id="difficulties">
             <option value="any" />
-            <option value="Easy" />
-            <option value="Medium" />
-            <option value="Difficult" />
+            <option value="easy" />
+            <option value="medium" />
+            <option value="hard" />
           </datalist>
         </form>
       </div>

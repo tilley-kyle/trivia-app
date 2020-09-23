@@ -3,6 +3,8 @@ import './App.css';
 
 import Renderer from './components/Renderer';
 
+import APIUrlGenerator from './controllers/APIUrlGenerator';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -38,6 +40,12 @@ class App extends React.Component {
     e.preventDefault();
     triviaCriteria[e.target.id] = e.target.value;
     this.setState(triviaCriteria);
+  }
+
+  onTriviaButtonClick(e) {
+    const { categories, triviaCriteria } = this.state;
+    e.preventDefault();
+    const url = APIUrlGenerator(categories, triviaCriteria);
   }
 
 
