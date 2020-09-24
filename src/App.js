@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       preMount: true,
+      gameState: false,
       categories: {},
       triviaCriteria: {},
     }
@@ -50,7 +51,15 @@ class App extends React.Component {
     const { categories, triviaCriteria } = this.state;
     e.preventDefault();
     const url = APIUrlGenerator(categories, triviaCriteria);
-    console.log(url)
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      this.setState({ gameState: true, questions: data });
+    })
+    .catch((err) => {
+      alert(err);
+    });
   }
 
 
