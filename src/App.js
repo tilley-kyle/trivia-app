@@ -55,7 +55,7 @@ class App extends React.Component {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      this.setState({ gameState: true, questions: data });
+      this.setState({ gameState: true, questions: data.results });
     })
     .catch((err) => {
       alert(err);
@@ -64,7 +64,7 @@ class App extends React.Component {
 
 
   render() {
-    const { preMount, categories} = this.state;
+    const { preMount, categories, gameState, questions } = this.state;
     return (
       <div className="container">
         <div className="title-box">
@@ -75,7 +75,9 @@ class App extends React.Component {
             preMount={preMount}
             categories={categories}
             onInputChange={this.onInputChange}
-            onTriviaButtonClick={this.onTriviaButtonClick}/>
+            onTriviaButtonClick={this.onTriviaButtonClick}
+            gameState={gameState}
+            questions={questions} />
         </div>
       </div>
     );
